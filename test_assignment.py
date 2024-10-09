@@ -41,7 +41,7 @@ def test2(n, expected_output):
     (5, "1\n2 3\n4 5 6\n7 8 9 10\n11 12 13 14 15"),
     (3, "1\n2 3\n4 5 6"),
 ])
-def test3, expected_output):
+def test3(n, expected_output):
     output = capture_output(print_pattern_3, n)
     assert output == expected_output
     assert check_contains_loop(print_pattern_3)
