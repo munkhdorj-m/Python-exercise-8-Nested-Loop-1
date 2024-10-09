@@ -10,58 +10,69 @@ https://drive.google.com/file/d/1RLtJoZs6p5zrJi6IZ79tS-NTlhFuO4vw/view?usp=shari
 
 **Problem:**
 
-Print below pattern with given n:
+Print below pattern with given n.
 
 **Example:**
 
 	Input: 5
 	Output:
-	  * * *
-	  * * *
-	  * * *
-	  * * *
-	  * * *
+	* * *
+	* * *
+	* * *
+	* * *
+	* * *
 ---
 
 ## Exercise 2
 
 **Problem:**
 
-Return the given number with the same number of digits.
+Print below pattern with given n:
 
 **Example:**
 
-	Input: 4
-	Output: 4444
+	Input: 5
+ 	Output:
+	1 2 3 4 5
+	1 2 3 4
+	1 2 3
+	1 2
+	1
  
- 	Input: 7
-	Output: 7777777
- 
-  	Input: 1
-	Output: 1
-
-
 ---
 
 ## Exercise 3
 
 **Problem:**
 
-Check if a given number is prime number or not.
+Print below pattern with given n:
 
 **Example**
 
- 	Input: 3
-  	Output: True
- 
-  	Input: 18
-  	Output: False
- 
-  	Input: 41
-  	Output: True
-   
-  	Input: 1
-  	Output: False
-     
+ 	Input: 5
+  	Output: 
+	1
+	2 3
+	4 5 6
+	7 8 9 10
+	11 12 13 14 15
+
 ---
 
+## Exercise 4
+
+**Problem:**
+
+Print below pattern with given n:
+
+**Example**
+
+ 	Input: 5
+  	Output: 
+	    *
+	   **
+	  ***
+	 ****
+	*****
+
+---
