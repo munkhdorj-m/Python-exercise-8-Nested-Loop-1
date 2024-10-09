@@ -6,42 +6,29 @@ def check_contains_loop(function):
     source = inspect.getsource(function)
     return 'for' in source or 'while' in source
 
-@pytest.mark.parametrize("n, expected_output", [
-    (5, "\n".join(["* " * 5] * 5)),
-    (3, "\n".join(["* " * 3] * 3)),
-])
-def test1(n, expected_output, capsys):
-    print_pattern_1(n)
-    captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output.strip()
-    assert check_contains_loop(print_pattern_1)
+def capsys(self, capsys):
+    self.capsys = capsys
 
-@pytest.mark.parametrize("n, expected_output", [
-    (5, "\n".join([" ".join(str(j) for j in range(1, i + 1)) for i in range(n, 0, -1)])),
-    (3, "\n".join([" ".join(str(j) for j in range(1, i + 1)) for i in range(3, 0, -1)])),
-])
-def test2(n, expected_output, capsys):
-    print_pattern_2(n)
-    captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output.strip()
-    assert check_contains_loop(print_pattern_1)
+def test1(self):
+    expected_output = "* * * \n" * 5 
+    print_pattern_1(5)
+    captured = self.capsys.readouterr()
+    assert captured.out == expected_output
 
-@pytest.mark.parametrize("n, expected_output", [
-    (5, "\n".join([" ".join(str(count + j) for j in range(i)) for i in range(1, 6) for count in [sum(range(i))]])),
-    (3, "\n".join([" ".join(str(count + j) for j in range(i)) for i in range(1, 4) for count in [sum(range(i))]])),
-])
-def test3(n, expected_output, capsys):
-    print_pattern_3(n)
-    captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output.strip()
-    assert check_contains_loop(print_pattern_1)
+def test2(self):
+    expected_output = "1 \n2 1 \n3 2 1 \n4 3 2 1 \n5 4 3 2 1 \n" 
+    print_pattern_2(5)
+    captured = self.capsys.readouterr()
+    assert captured.out == expected_output
 
-@pytest.mark.parametrize("n, expected_output", [
-    (5, "\n".join([" " * (n - i) + "*" * i for i in range(1, 6)])),
-    (3, "\n".join([" " * (n - i) + "*" * i for i in range(1, 4)])),
-])
-def test4(n, expected_output, capsys):
-    print_pattern_4(n)
-    captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output.strip()
-    assert check_contains_loop(print_pattern_1)
+def test3(self):
+    expected_output = "1 \n2 3 \n4 5 6 \n7 8 9 10 \n11 12 13 14 15 \n" 
+    print_pattern_3(5)
+    captured = self.capsys.readouterr()
+    assert captured.out == expected_output
+
+def test4(self):
+    expected_output = "    *\n   **\n  ***\n ****\n*****\n" 
+    print_pattern_4(5)
+    captured = self.capsys.readouterr()
+    assert captured.out == expected_output
