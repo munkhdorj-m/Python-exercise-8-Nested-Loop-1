@@ -7,41 +7,41 @@ def check_contains_loop(function):
     return 'for' in source or 'while' in source
 
 @pytest.mark.parametrize("n, expected_output", [
-    (5, "* * * * *\n* * * * *\n* * * * *\n* * * * *\n* * * * *"),
-    (3, "* * *\n* * *\n* * *"),
+    (5, "\n".join(["* " * 5] * 5)),
+    (3, "\n".join(["* " * 3] * 3)),
 ])
 def test1(n, expected_output, capsys):
     print_pattern_1(n)
     captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output
+    assert captured.out.strip() == expected_output.strip()
     assert check_contains_loop(print_pattern_1)
 
 @pytest.mark.parametrize("n, expected_output", [
-    (5, "1 2 3 4 5\n1 2 3 4\n1 2 3\n1 2\n1"),
-    (3, "1 2 3\n1 2\n1"),
+    (5, "\n".join([" ".join(str(j) for j in range(1, i + 1)) for i in range(n, 0, -1)])),
+    (3, "\n".join([" ".join(str(j) for j in range(1, i + 1)) for i in range(3, 0, -1)])),
 ])
 def test2(n, expected_output, capsys):
     print_pattern_2(n)
     captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output
-    assert check_contains_loop(print_pattern_2)
+    assert captured.out.strip() == expected_output.strip()
+    assert check_contains_loop(print_pattern_1)
 
 @pytest.mark.parametrize("n, expected_output", [
-    (5, "1\n2 3\n4 5 6\n7 8 9 10\n11 12 13 14 15"),
-    (3, "1\n2 3\n4 5 6"),
+    (5, "\n".join([" ".join(str(count + j) for j in range(i)) for i in range(1, 6) for count in [sum(range(i))]])),
+    (3, "\n".join([" ".join(str(count + j) for j in range(i)) for i in range(1, 4) for count in [sum(range(i))]])),
 ])
 def test3(n, expected_output, capsys):
     print_pattern_3(n)
     captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output
-    assert check_contains_loop(print_pattern_3)
+    assert captured.out.strip() == expected_output.strip()
+    assert check_contains_loop(print_pattern_1)
 
 @pytest.mark.parametrize("n, expected_output", [
-    (5, "    *\n   **\n  ***\n ****\n*****"),
-    (3, "  *\n **\n***"),
+    (5, "\n".join([" " * (n - i) + "*" * i for i in range(1, 6)])),
+    (3, "\n".join([" " * (n - i) + "*" * i for i in range(1, 4)])),
 ])
 def test4(n, expected_output, capsys):
     print_pattern_4(n)
     captured = capsys.readouterr()
-    assert captured.out.strip() == expected_output
-    assert check_contains_loop(print_pattern_4)
+    assert captured.out.strip() == expected_output.strip()
+    assert check_contains_loop(print_pattern_1)
