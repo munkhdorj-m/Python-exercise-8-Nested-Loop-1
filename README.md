@@ -10,19 +10,17 @@ https://drive.google.com/file/d/1RLtJoZs6p5zrJi6IZ79tS-NTlhFuO4vw/view?usp=shari
 
 **Problem:**
 
-Find highest digit of a given number.
+Print below pattern with given n:
 
 **Example:**
 
-	Input: 1234
-	Output: 4
- 
- 	Input: 91635
-	Output: 9
- 
-  	Input: 0
-	Output: 0
-
+	Input: 5
+	Output:
+	  * * *
+	  * * *
+	  * * *
+	  * * *
+	  * * *
 ---
 
 ## Exercise 2
