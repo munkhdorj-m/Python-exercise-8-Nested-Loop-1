@@ -10,23 +10,6 @@ https://drive.google.com/file/d/1RLtJoZs6p5zrJi6IZ79tS-NTlhFuO4vw/view?usp=shari
 
 **Problem:**
 
-Print below pattern with given n.
-
-**Example:**
-
-	Input: 5
-	Output:
-	* * *
-	* * *
-	* * *
-	* * *
-	* * *
----
-
-## Exercise 2
-
-**Problem:**
-
 Print below pattern with given n:
 
 **Example:**
@@ -41,7 +24,7 @@ Print below pattern with given n:
  
 ---
 
-## Exercise 3
+## Exercise 2
 
 **Problem:**
 
@@ -59,7 +42,7 @@ Print below pattern with given n:
 
 ---
 
-## Exercise 4
+## Exercise 3
 
 **Problem:**
 
