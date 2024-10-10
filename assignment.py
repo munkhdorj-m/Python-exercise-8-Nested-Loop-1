@@ -14,8 +14,3 @@ def print_pattern_2(n):
 def print_pattern_3(n):
     # Write your code here
     pass
-
-# Exercise 4
-def print_pattern_4(n):
-    # Write your code here
-    pass
