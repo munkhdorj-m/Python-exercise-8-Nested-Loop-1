@@ -13,7 +13,13 @@ def test1(capsys):
     assert captured.out == expected_output
 
 def test2(capsys):
-    expected_output = "1 \n2 1 \n3 2 1 \n4 3 2 1 \n5 4 3 2 1 \n" 
+    expected_output = (
+        "1 2 3 4 5 \n"
+        "1 2 3 4 \n"
+        "1 2 3 \n"
+        "1 2 \n"
+        "1 \n"
+    )
     print_pattern_2(5)
     captured = capsys.readouterr()
     assert captured.out == expected_output
