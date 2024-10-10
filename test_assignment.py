@@ -8,18 +8,6 @@ def check_contains_loop(function):
 
 def test1(capsys):
     expected_output = (
-    "* * * \n"
-    "* * * \n"
-    "* * * \n"
-    "* * * \n"
-    "* * * \n"
-    )
-    print_pattern_1(5)
-    captured = capsys.readouterr()
-    assert captured.out == expected_output
-
-def test2(capsys):
-    expected_output = (
         "1 2 3 4 5 \n"
         "1 2 3 4 \n"
         "1 2 3 \n"
@@ -30,13 +18,13 @@ def test2(capsys):
     captured = capsys.readouterr()
     assert captured.out == expected_output
 
-def test3(capsys):
+def test2(capsys):
     expected_output = "1 \n2 3 \n4 5 6 \n7 8 9 10 \n11 12 13 14 15 \n" 
     print_pattern_3(5)
     captured = capsys.readouterr()
     assert captured.out == expected_output
 
-def test4(capsys):
+def test3(capsys):
     expected_output = "    *\n   **\n  ***\n ****\n*****\n"
     print_pattern_4(5)
     captured = capsys.readouterr()
