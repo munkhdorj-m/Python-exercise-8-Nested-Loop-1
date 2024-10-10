@@ -7,7 +7,12 @@ def check_contains_loop(function):
     return 'for' in source or 'while' in source
 
 def test1(capsys):
-    expected_output = "* * * \n" * 5 
+    expected_output = 
+    "* * * \n"
+    "* * * \n"
+    "* * * \n"
+    "* * * \n"
+    "* * * \n"
     print_pattern_1(5)
     captured = capsys.readouterr()
     assert captured.out == expected_output
